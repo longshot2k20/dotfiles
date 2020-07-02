@@ -24,7 +24,8 @@ export HOMEBREW_EDITOR=code
 
 ### Should be in .private-env
 # set default java_home(can be overriden in current shell with jdk function)
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_252`
+# temp export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_252`
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
 
 # load big-data env's(hadoop, spark, etc.)
 source "$dotfiles/big-data/big-data-env.sh"

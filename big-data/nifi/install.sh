@@ -17,4 +17,6 @@ brew remove nifi
 brew install nifi
 brew pin nifi
 
+# todo change default port 8080
+
 # Finished Nifi install see Nifi/README.md to complete

@@ -74,6 +74,18 @@ alias nifi-start='nifi start'
 alias nifi-stop='nifi stop'
 alias nifi-status='nifi status'
 
+# PrestoDB
+export PRESTO_VERSION=0.235.1_1
+export PRESTO_HOME=/usr/local/Cellar/prestodb/${PRESTO_VERSION}/libexec
+export PRESTO_CONF_DIR=$PRESTO_HOME/etc
+export PRESTO_CATALOG_DIR=$PRESTO_CONF_DIR/catalog
+export PATH=$PATH:$PRESTO_HOME/bin
+alias presto-start='presto-server start && presto --server localhost:9988 --catalog hive'
+alias presto-status='presto-server status'
+alias presto-stop='presto-server stop'
+alias presto-restart='presto-server restart'
+alias presto-cli='presto --server localhost:9988 --catalog hive'
+
 # Common Hadoop File System Aliases
 alias hf="hadoop fs"                                         # Base Hadoop fs command
 alias hfcat="hf -cat"                                        # Output a file to standard out
