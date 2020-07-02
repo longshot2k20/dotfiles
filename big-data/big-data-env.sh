@@ -21,11 +21,11 @@ export HIVE_VERSION=3.1.2_1
 export HIVE_HOME=/usr/local/Cellar/hive/${HIVE_VERSION}/libexec
 export HIVE_CONF_DIR=$HIVE_HOME/conf
 export PATH=$HIVE_HOME/bin:$PATH
-alias hive-start='/usr/local/Cellar/hive/${HIVE_VERSION}/libexec/bin/run-hive.sh start'
-alias hive-stop='/usr/local/Cellar/hive/${HIVE_VERSION}/libexec/bin/run-hive.sh stop'
+alias hive-start='$HIVE_HOME/bin/run-hive.sh start'
+alias hive-stop='$HIVE_HOME/bin/run-hive.sh stop'
 alias hive='$HIVE_HOME/bin/hive'
 
-# Pig
+# Pig not working with hadoop3
 export PIG_VERSION=0.17.0_1
 export PIG_HOME=/usr/local/Cellar/pig/${PIG_VERSION}/libexec
 export PATH=$PIG_HOME/bin:$PATH
