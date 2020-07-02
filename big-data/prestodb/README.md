@@ -9,6 +9,10 @@
 $HOME/Data/appData/presto/data
 ```
 
+# Website
+
+<http:/localhost:9988>
+
 ## Validate the install
 
 Run in the foreground
