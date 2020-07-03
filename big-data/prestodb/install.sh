@@ -3,7 +3,7 @@
 # PrestoDB 0.235.1_1
 
 # PRE-REQS
-# jdk11 is installed and 
+# jdk8 is installed and 
 # JAVA_HOME is set correctly before running
 # Hadoop
 # Hive
@@ -12,7 +12,7 @@ if [[ ! -d "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home" 
   echo "JDK-8 must be installed on machine" && exit 1 
 fi
 
-# Install PrestDB
+# Install
 brew update && brew upgrade
 brew unpin prestodb
 brew remove prestodb

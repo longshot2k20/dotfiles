@@ -22,7 +22,6 @@ echo "Killed existing processes on 2181"
 [[ ! -z $(lsof -i :21810 | grep -i java | awk '{print $2}') ]] && echo "Process still running on 2181 exiting" && exit 1
 
 echo "Copy local zookeeper brew file to override latest"
-#cp $HOME/Developer/personal/dotfiles/big-data/zookeeper/rb/zookeeper.rb /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/
 
 brew install zookeeper
 brew pin zookeeper

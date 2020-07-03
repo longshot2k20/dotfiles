@@ -17,7 +17,7 @@ fpath=("$dotfiles/terminal" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'paulmillr'
 
-path=(/usr/local/sbin /Applications/Visual Studio Code.app/Contents/Resources/app/bin /usr/local/opt/ruby/bin /usr/local/opt/python@3.8/bin $HOME/.cargo/bin $path) # changing .zshenv doesn't work
+path=(/usr/local/sbin /Applications/Visual Studio Code.app/Contents/Resources/app/bin /usr/local/opt/ruby/bin /usr/local/opt/python@3.8/bin $path)
 export GPG_TTY=$(tty) # For git commit signing
 
 export HOMEBREW_EDITOR=code
@@ -35,6 +35,9 @@ source "$dotfiles/big-data/big-data-env.sh"
 # ==================================================================
 # = Aliases =
 # ==================================================================
+
+alias python='/usr/local/opt/python@3.8/bin/python'
+alias pip='/usr/local/opt/python@3.8/bin/pip3'
 
 # Simple clear command.
 alias cl='clear'

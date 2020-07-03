@@ -86,6 +86,11 @@ alias presto-stop='presto-server stop'
 alias presto-restart='presto-server restart'
 alias presto-cli='presto --server localhost:9988 --catalog hive'
 
+#Jupyter
+export JUPYTER_VERSION=2.1.5
+export JUPYTER_HOME=/usr/local/Cellar/jupyterlab/2.1.5/libexec
+export PATH=$JUPYTER_HOME/bin:$PATH
+
 # Common Hadoop File System Aliases
 alias hf="hadoop fs"                                         # Base Hadoop fs command
 alias hfcat="hf -cat"                                        # Output a file to standard out
