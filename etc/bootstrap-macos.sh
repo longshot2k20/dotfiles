@@ -111,9 +111,12 @@ if [[ `uname` == 'Darwin' ]]; then
   # amazon music app
   brew cask install amazon-music
 
+  # amazon kindle
+  brew cask info kindle
+
   # scala
   brew install scala
-  # scala package manager(not required but may be useful)
+  # scala package manager
   brew install sbt
 
   #install docker https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
