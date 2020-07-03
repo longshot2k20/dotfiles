@@ -99,6 +99,11 @@ if [[ `uname` == 'Darwin' ]]; then
   # scala ide
   brew cask install scala-ide
 
+  # scala
+  brew install scala
+  # scala package manager
+  brew install sbt
+
   # show id3 tags in mp3 other formats
   brew install exiftool
 
@@ -113,11 +118,6 @@ if [[ `uname` == 'Darwin' ]]; then
 
   # amazon kindle
   brew cask info kindle
-
-  # scala
-  brew install scala
-  # scala package manager
-  brew install sbt
 
   #install docker https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
   brew install docker docker-machine
