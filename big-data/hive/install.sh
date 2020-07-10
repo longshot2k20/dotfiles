@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Hive 3.1.2
+# Hive 3.1.2 and latest MySQL if not installed
 JDBCUSER='hive_user'
 JDBCPASS='hivepassword'
 

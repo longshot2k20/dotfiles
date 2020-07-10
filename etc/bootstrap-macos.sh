@@ -71,7 +71,13 @@ if [[ `uname` == 'Darwin' ]]; then
   scalameta.metals \
   DavidAnson.vscode-markdownlint \
   humao.rest-client \
-  coenraads.bracket-pair-colorizer"
+  coenraads.bracket-pair-colorizer \
+  eamodio.gitlens \
+  mtxr.sqltools-driver-mysql \
+  mtxr.sqltools \
+  formulahendry.vscode-mysql \
+  Bajdzis.vscode-database"
+  
   exts=($(echo $ext_str))
   for i in ${exts[@]}
   do
