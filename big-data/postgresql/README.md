@@ -90,7 +90,7 @@ rm -r ~/.pgadmin/
 brew cask install pgadmin4
 ```
 
-## Appendix not applied but tested creating new user
+## Appendix not applied but tested creating new user ultimately just installed under \$USER
 
 ### Create a new user
 
