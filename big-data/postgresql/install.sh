@@ -7,6 +7,10 @@ brew update && brew upgrade
 brew unpin postgresql
 brew remove postgresql
 
+read -p "Do you want to remove all existing database data?[Nn]" -n 1 -r
+[[ $REPLY =~ ^[Yy]$ ]] && rm -rf /usr/local/var/postgres \
+&& rm -rf .psql_history .psqlrc .psql.local .pgpass .psqlrc.local || echo "Error removing postgresql data"
+
 brew install postgresql
 brew pin postgresql
 VER=$(brew info postgresql | ggrep -oP '(?<=^/usr/local/Cellar/postgresql/).*?(?=\s)')

@@ -90,6 +90,9 @@ if [[ `uname` == 'Darwin' ]]; then
   brew cask install adoptopenjdk11
   brew cask install adoptopenjdk14-openj9-large
 
+  # postgresql client
+  brew cask install pgadmin4
+  
   # maven
   brew install maven
 
