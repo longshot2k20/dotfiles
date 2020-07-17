@@ -44,6 +44,39 @@ list the tables in the currently connected database
 \dt:
 ```
 
+Basics on sqlda database
+
+```console
+~ ❯ psql sqlda
+psql (12.3)
+Type "help" for help.
+
+sqlda=# \dt
+                    List of relations
+ Schema |             Name             | Type  |  Owner
+--------+------------------------------+-------+---------
+ public | closest_dealerships          | table | $USER
+ public | countries                    | table | $USER
+ public | customer_sales               | table | $USER
+ public | customer_survey              | table | $USER
+ public | customers                    | table | $USER
+ public | dealerships                  | table | $USER
+ public | emails                       | table | $USER
+ public | products                     | table | $USER
+ public | public_transportation_by_zip | table | $USER
+ public | sales                        | table | $USER
+ public | salespeople                  | table | $USER
+ public | top_cities_data              | table | $USER
+(12 rows)
+
+sqlda=# \dt countries
+          List of relations
+ Schema |   Name    | Type  |  Owner
+--------+-----------+-------+---------
+ public | countries | table | $USER
+(1 row)
+```
+
 ## Loading a dump file as superuser into database sqlda
 
 ```console
