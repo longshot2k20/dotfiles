@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Removing let's not use brew for python
+
 # Jupyter 2.1.5
 
 # Install

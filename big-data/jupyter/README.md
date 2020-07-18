@@ -1,4 +1,4 @@
-# PrestoDB
+# Jupyter (Update install with PIP)
 
 ## Directories
 

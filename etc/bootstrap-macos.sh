@@ -46,6 +46,7 @@ if [[ `uname` == 'Darwin' ]]; then
   node \
   pbzip2 \
   pyenv \
+  pyenv-virtualenv \
   ruby \
   postgresql \
   tree \

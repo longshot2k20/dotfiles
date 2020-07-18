@@ -203,3 +203,26 @@ Port: 5432
 Maintenance database: packt
 Username: packt
 ```
+
+## Postgresql not starting
+
+Verify not running on port 5432
+
+```console
+lsof -i :5432
+```
+
+Stop running service. When running brew services postgresql may be in yellow state.
+
+```console
+postgres ❯ brew services
+postgres ❯ brew services stop postgresql
+Stopping `postgresql`... (might take a while)
+postgres ❯ lsof -i :5432
+COMMAND    PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+postgres 54050 $USER      5u  IPv6 0xa599affa98a46f5d      0t0  TCP localhost:postgresql (LISTEN)
+postgres 54050 $USER      6u  IPv4 0xa599affaae49ad6d      0t0  TCP localhost:postgresql (LISTEN)
+postgres ❯ brew services
+```
+
+After remove pid brew services should show postgresql in green.

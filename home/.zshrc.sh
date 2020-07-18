@@ -31,20 +31,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents
 # load big-data env's(hadoop, spark, etc.)
 source "$dotfiles/big-data/big-data-env.sh"
 
-# loading pyenv
-#  for now treating brew installed python's separately from pyenv installed python's(needed as dependencies)
-#  doesn't play well with pyenv
-# pyenv install 3.8.3
-# pyenv install anaconda3-5.3.1
-# pyenv global 3.8.3
-# pyenv install --list
-# pyenv install --list
-# pyenv version
-# pyenv which python
-# pyenv which pip
+# loading pyenv and it's plugin virtualenv
 eval "$(pyenv init -)"
-
-###
+eval "$(pyenv virtualenv-init -)"
 
 ###
 # ==================================================================
