@@ -45,8 +45,7 @@ if [[ `uname` == 'Darwin' ]]; then
   htop \
   node \
   pbzip2 \
-  python@3.8 \
-  python@2 \
+  pyenv \
   ruby \
   postgresql \
   tree \

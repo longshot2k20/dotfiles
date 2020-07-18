@@ -17,7 +17,8 @@ fpath=("$dotfiles/terminal" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'paulmillr'
 
-path=(/usr/local/sbin /Applications/Visual Studio Code.app/Contents/Resources/app/bin /usr/local/opt/ruby/bin /usr/local/opt/python@3.8/bin $path)
+#path=(/usr/local/sbin /Applications/Visual Studio Code.app/Contents/Resources/app/bin /usr/local/opt/ruby/bin /usr/local/opt/python@3.8/bin $path)
+path=(/usr/local/sbin /Applications/Visual Studio Code.app/Contents/Resources/app/bin /usr/local/opt/ruby/bin $path)
 export GPG_TTY=$(tty) # For git commit signing
 
 export HOMEBREW_EDITOR=code
@@ -30,6 +31,19 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents
 # load big-data env's(hadoop, spark, etc.)
 source "$dotfiles/big-data/big-data-env.sh"
 
+# loading pyenv
+#  for now treating brew installed python's separately from pyenv installed python's(needed as dependencies)
+#  doesn't play well with pyenv
+# pyenv install 3.8.3
+# pyenv install anaconda3-5.3.1
+# pyenv global 3.8.3
+# pyenv install --list
+# pyenv install --list
+# pyenv version
+# pyenv which python
+# pyenv which pip
+eval "$(pyenv init -)"
+
 ###
 
 ###
@@ -37,8 +51,8 @@ source "$dotfiles/big-data/big-data-env.sh"
 # = Aliases =
 # ==================================================================
 
-alias python='/usr/local/opt/python@3.8/bin/python'
-alias pip='/usr/local/opt/python@3.8/bin/pip3'
+#alias python='/usr/local/opt/python@3.8/bin/python'
+#alias pip='/usr/local/opt/python@3.8/bin/pip3'
 
 # Simple clear command.
 alias cl='clear'
