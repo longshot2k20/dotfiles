@@ -31,9 +31,20 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents
 # load big-data env's(hadoop, spark, etc.)
 source "$dotfiles/big-data/big-data-env.sh"
 
+
+# pyenv and conda don't play well together
+# install pyenv and anaconda to handle separate virtual environments
+#
+# see https://stackoverflow.com/questions/58044214/installing-anaconda-with-pyenv-unable-to-configure-virtual-environment
+
 # loading pyenv and it's plugin virtualenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# init conda, the following command write scripts into your shell init file automatically
+/usr/local/anaconda3/condabin/conda init zsh
+# disable init of env "base"
+/usr/local/anaconda3/condabin/conda config --set auto_activate_base false
 
 ###
 # ==================================================================
@@ -374,3 +385,19 @@ jdk() {
   export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
   java -version
  }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

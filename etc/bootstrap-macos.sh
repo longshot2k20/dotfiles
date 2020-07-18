@@ -58,6 +58,9 @@ if [[ `uname` == 'Darwin' ]]; then
     brew install $i
   done
     
+  # install Anaconda will use both pyenv and conda to handle virtual environments
+  brew cask install anaconda
+
   # install PyChame community edition
   brew cask install PyCharm-ce
   

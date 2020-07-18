@@ -1,25 +1,65 @@
 # Python
 
-## Installation
+## Installation pyenv and conda
 
 Installed via \$DOTFILES/etc/boostrap-macos.sh
-This snippet pertains directly to python
+This snippet from bootstrap-macos.sh pertains directly to python
 
 ```console
 brew install pyenv
 brew install pyenv-virtualenv
+brew cask install anaconda
 ```
 
-in .xshrc these lines config pyenv and active pyenv-virtualenv
+in .zshrc these lines config pyenv and active pyenv-virtualenv
 
 ```console
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-Do not install python via homebrew rely on pyenv and plugin pyenv-virtualenv.
+this snippet corresponds with anaconda's conda
+
+```console
+# init conda, the following command write scripts into your shell init file automatically
+/usr/local/anaconda3/condabin/conda init zsh
+# disable init of env "base"
+/usr/local/anaconda3/condabin/conda config --set auto_activate_base false
+```
+
+Do not install python via homebrew rely on pyenv and conda.
+
+The current setup will use conda if it's activated environment(non-base) and pyenv otherwise, if the folder contains a .python-version file that will become activated in pyenv.
 
 ## Useful commands
+
+List conda environment
+
+```console
+dotfiles master* ❯ conda env list
+# conda environments:
+#
+base                  *  /usr/local/anaconda3
+anaconda-postgres        /usr/local/anaconda3/envs/anaconda-postgres
+```
+
+Create conda environment
+
+```console
+conda create --name anaconda-postgres psycopg2
+```
+
+Active conda environment
+
+```console
+conda activate anaconda-postgres
+```
+
+Deactivate conda(return to base in our system then let pyenv take over)
+
+```console
+conda deactivate
+```
 
 List pyenv versions
 
@@ -41,7 +81,55 @@ pyenv which python
 pyenv which pip
 ```
 
-## Create a specific virtualenv for a project
+## Create a conda virtualenv
+
+Create a folder for the new project
+
+```console
+mkdir anaconda-postgres
+```
+
+Create a conda virtualenv with postgres
+
+```console
+create --name anaconda-postgres psycopg2
+```
+
+Activate the virtualenv
+
+```console
+conda activate anaconda-postgres
+```
+
+To create a new project in pycharm that uses the above virtualenv, follow these steps:
+
+- Launch PyCharm CE
+- Enter the location name for e.g.
+  \$USER/Developer/src/anaconda-postgres
+- Select Existing interpreter radial button
+- Navigate to the following executable
+  /usr/local/anaconda3/envs/anaconda-postgres/bin/python
+
+Open a python console
+
+```console
+import psycopg2
+with psycopg2.connect(host="localhost", user="$USER", password="$PASSWORD", dbname="sqlda", port=5432) as conn:
+    with conn.cursor() as cur:
+        cur.execute("select * from customers limit 5")
+        records = cur.fetchall()
+print(records)
+```
+
+Once you leave the folder deactivate the virtualenv so it defaults to conda base and reverts to pyenv.
+
+```console
+conda deactivate
+```
+
+Within pycharm it does not appear necessary to activate/deactivate environments seems to just respect what has been configured for the project.
+
+## Create a pyenv virtualenv
 
 ```console
 pyenv virtualenv anaconda3-5.3.1 postgres-anaconda3-5.3.1
@@ -81,9 +169,7 @@ anaconda-postgres ❯ pyenv local anaconda3-5.3.1/envs/postgres-anaconda3-5.3.1
 (anaconda3-5.3.1/envs/postgres-anaconda3-5.3.1) anaconda-postgres ❯ conda
 ```
 
-## Example simple project
-
-Follow the preceding step to create a project in PyCharm using a python virtual env.
+To create a project in PyCharm using a python virtual env.
 
 Install postgres package
 
