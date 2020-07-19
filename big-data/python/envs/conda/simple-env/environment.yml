@@ -1,0 +1,17 @@
+name: simple-env
+channels:
+  - defaults
+
+dependencies:
+  - bokeh
+  - dill
+  - ipykernel
+  - numpy
+  - matplotlib
+  - pandas
+  - partd
+  - psycopg2
+  - python=3.7.6
+  - sqlalchemy
+  - toolz
+prefix: /usr/local/anaconda3

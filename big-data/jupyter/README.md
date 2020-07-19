@@ -1,13 +1,12 @@
-# Jupyter (Update install with PIP)
+# Jupyter (via anaconda install)
 
 ## Directories
 
 ```console
-/usr/local/Cellar/jupyterlab/2.1.5/libexec
-/usr/local/Cellar/jupyterlab/2.1.5/libexec/bin
+/usr/local/anaconda3/bin
 ```
 
-# Website
+## Website
 
 <http://localhost:8888/>
 
@@ -16,5 +15,11 @@
 Run in the foreground
 
 ```console
-jupyter notebook
+conda run jupyter notebook
+```
+
+Can also run via anaconda navigator
+
+```console
+conda run anaconda-navigator
 ```

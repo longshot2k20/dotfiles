@@ -31,6 +31,20 @@ Do not install python via homebrew rely on pyenv and conda.
 
 The current setup will use conda if it's activated environment(non-base) and pyenv otherwise, if the folder contains a .python-version file that will become activated in pyenv.
 
+## Anaconda commands
+
+Run Anaconda Navigator
+
+```console
+conda run anaconda-navigator
+```
+
+Run Jupyter Notebook
+
+```console
+conda run jupyter notebook
+```
+
 ## Useful commands
 
 List conda environment
@@ -81,7 +95,10 @@ pyenv which python
 pyenv which pip
 ```
 
-## Create a conda virtualenv
+## Create a conda virtuanenv #1
+conda create -n mypy37 python=3.7 psycopg2 numpy scipy
+
+## Create a conda virtualenv #2
 
 Create a folder for the new project
 

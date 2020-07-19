@@ -87,9 +87,9 @@ alias presto-restart='presto-server restart'
 alias presto-cli='presto --server localhost:9988 --catalog hive'
 
 # Jupyter
-export JUPYTER_VERSION=2.1.5
-export JUPYTER_HOME=/usr/local/Cellar/jupyterlab/2.1.5/libexec
-export PATH=$JUPYTER_HOME/bin:$PATH
+#export JUPYTER_VERSION=2.1.5
+#export JUPYTER_HOME=/usr/local/Cellar/jupyterlab/2.1.5/libexec
+#export PATH=$JUPYTER_HOME/bin:$PATH
 
 # Postgresql
 export POSTGRESQL_VERSION=12.3_4
