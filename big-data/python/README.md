@@ -116,6 +116,11 @@ git remote add origin git@github.com:longshot2k20/python_template.git
 git push -u origin master
 ```console
 
+```console
+pip install -r requirements_dev.txt
+make test
+```
+
 ## Create a conda virtuanenv #1
 
 conda create -n mypy37 python=3.7 psycopg2 numpy scipy

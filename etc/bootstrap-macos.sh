@@ -72,6 +72,7 @@ if [[ `uname` == 'Darwin' ]]; then
   donjayamanne.githistory \
   idleberg.applescript \
   scalameta.metals \
+  ms-python.python \
   DavidAnson.vscode-markdownlint \
   humao.rest-client \
   coenraads.bracket-pair-colorizer \
