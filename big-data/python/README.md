@@ -95,7 +95,29 @@ pyenv which python
 pyenv which pip
 ```
 
+## Create a project with cookiercutter
+
+Create python_tempate as new github repo in browser
+
+````console
+cd $dev/src/github.com/longshot2k20/
+pyenv virtualenv 3.8.3 python-template
+pyenv activate python-template
+pip install cookiecutter
+cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+cd python_template
+pyenv local python-template
+git init .
+git add .
+git commit -m "Initial check-in"
+git push -u origin
+pwd
+git remote add origin git@github.com:longshot2k20/python_template.git
+git push -u origin master
+```console
+
 ## Create a conda virtuanenv #1
+
 conda create -n mypy37 python=3.7 psycopg2 numpy scipy
 
 ## Create a conda virtualenv #2
@@ -226,3 +248,4 @@ records[0]
 (1, None, 'Arlena', 'Riveles', None, 'ariveles0@stumbleupon.com', 'F', '98.36.172.246', None, None, None, None, None, None, None, datetime.datetime(2017, 4, 23, 0, 0))
 records[5]
 ```
+````
