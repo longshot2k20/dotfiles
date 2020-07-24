@@ -51,8 +51,9 @@ eval "$(pyenv virtualenv-init -)"
 # = Aliases =
 # ==================================================================
 
-#alias python='/usr/local/opt/python@3.8/bin/python'
-#alias pip='/usr/local/opt/python@3.8/bin/pip3'
+# bad way to handle python
+# alias python='/usr/local/opt/python@3.8/bin/python'
+# alias pip='/usr/local/opt/python@3.8/bin/pip3'
 
 # Simple clear command.
 alias cl='clear'
