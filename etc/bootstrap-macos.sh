@@ -68,19 +68,18 @@ if [[ `uname` == 'Darwin' ]]; then
   brew cask install visual-studio-code
 
   # VS Code extensions  
-  ext_str="esbenp.prettier-vscode \
-  donjayamanne.githistory \
-  idleberg.applescript \
-  scalameta.metals \
-  ms-python.python \
+  ext_str="coenraads.bracket-pair-colorizer \
   DavidAnson.vscode-markdownlint \
-  humao.rest-client \
-  coenraads.bracket-pair-colorizer \
+  donjayamanne.githistory \
   eamodio.gitlens \
-  mtxr.sqltools-driver-mysql \
+  esbenp.prettier-vscode \
+  humao.rest-client \
+  idleberg.applescript \
+  ms-python.python \
+  scalameta.metals \
   mtxr.sqltools \
-  formulahendry.vscode-mysql \
-  Bajdzis.vscode-database"
+  mtxr.sqltools-driver-mysql \
+  mtxr.sqltools-driver-pg"
   
   exts=($(echo $ext_str))
   for i in ${exts[@]}

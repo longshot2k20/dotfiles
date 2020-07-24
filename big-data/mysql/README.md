@@ -1,5 +1,11 @@
 # MySQL tips
 
+# login to mysql as root
+
+```console
+mysql -u root -p
+```
+
 ### Lower security settings
 
 ```console
@@ -59,6 +65,7 @@ Request connection/GetChildrenForTreeItemRequest failed with message: ER_NOT_SUP
 ```
 
 fix
+
 ```console
 ALTER USER 'emp_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 ```
