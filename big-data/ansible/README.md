@@ -45,10 +45,8 @@ ansible --version
 ```
 
 ```console
-ansible-playbook -i hosts -e "ansible_python_interpreter=~/.pyenv/versions/ansible/bin/python" -vvv create-bucket-playbook.yml
+ansible-playbook -i inventory/local -vvv create-bucket-playbook.yml
 ```
-
-output:
 
 ```console
 ansible-playbook 2.9.11
@@ -58,10 +56,11 @@ ansible-playbook 2.9.11
   executable location = $USER/.pyenv/versions/ansible/bin/ansible-playbook
   python version = 3.8.3 (default, Jul 17 2020, 20:50:40) [Clang 11.0.3 (clang-1103.0.32.62)]
 Using $USER/Developer/personal/dotfiles/big-data/ansible/ansible.cfg as config file
-host_list declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/hosts as it did not pass its verify_file() method
-script declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/hosts as it did not pass its verify_file() method
-auto declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/hosts as it did not pass its verify_file() method
-Parsed $USER/Developer/personal/dotfiles/big-data/ansible/hosts inventory source with ini plugin
+host_list declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/inventory/local as it did not pass its verify_file() method
+script declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/inventory/local as it did not pass its verify_file() method
+auto declined parsing $USER/Developer/personal/dotfiles/big-data/ansible/inventory/local as it did not pass its verify_file() method
+Parsed $USER/Developer/personal/dotfiles/big-data/ansible/inventory/local inventory source with ini plugin
+[WARNING]: Found both group and host with same name: localhost
 
 PLAYBOOK: create-bucket-playbook.yml ***********************************************************************************************************************************
 1 plays in create-bucket-playbook.yml
@@ -72,12 +71,12 @@ TASK [Gathering Facts] *********************************************************
 task path: $USER/Developer/personal/dotfiles/big-data/ansible/create-bucket-playbook.yml:2
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: $USER
 <localhost> EXEC /bin/sh -c 'echo ~$USER && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $USER/.ansible/tmp `"&& mkdir $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802 && echo ansible-tmp-1595726798.454769-64333-255129387397802="` echo $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $USER/.ansible/tmp `"&& mkdir $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401 && echo ansible-tmp-1595759960.773309-75323-28300953720401="` echo $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401 `" ) && sleep 0'
 Using module file $USER/.pyenv/versions/3.8.3/envs/ansible/lib/python3.8/site-packages/ansible/modules/system/setup.py
-<localhost> PUT $USER/.ansible/tmp/ansible-local-643200yc225l9/tmphnxm5v6l TO $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802/AnsiballZ_setup.py
-<localhost> EXEC /bin/sh -c 'chmod u+x $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802/ $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802/AnsiballZ_setup.py && sleep 0'
-<localhost> EXEC /bin/sh -c '~/.pyenv/versions/ansible/bin/python $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802/AnsiballZ_setup.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r $USER/.ansible/tmp/ansible-tmp-1595726798.454769-64333-255129387397802/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT $USER/.ansible/tmp/ansible-local-75310ugnkufdv/tmpkbh4q8ou TO $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401/ $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c '~/.pyenv/versions/ansible/bin/python $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r $USER/.ansible/tmp/ansible-tmp-1595759960.773309-75323-28300953720401/ > /dev/null 2>&1 && sleep 0'
 ok: [localhost]
 META: ran handlers
 
@@ -85,12 +84,12 @@ TASK [Create new bucket] *******************************************************
 task path: $USER/Developer/personal/dotfiles/big-data/ansible/create-bucket-playbook.yml:7
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: $USER
 <localhost> EXEC /bin/sh -c 'echo ~$USER && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $USER/.ansible/tmp `"&& mkdir $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221 && echo ansible-tmp-1595726799.2544389-64365-270755215531221="` echo $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo $USER/.ansible/tmp `"&& mkdir $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618 && echo ansible-tmp-1595759961.57452-75355-68774172649618="` echo $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618 `" ) && sleep 0'
 Using module file $USER/.pyenv/versions/3.8.3/envs/ansible/lib/python3.8/site-packages/ansible/modules/cloud/amazon/aws_s3.py
-<localhost> PUT $USER/.ansible/tmp/ansible-local-643200yc225l9/tmpu23si57f TO $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221/AnsiballZ_aws_s3.py
-<localhost> EXEC /bin/sh -c 'chmod u+x $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221/ $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221/AnsiballZ_aws_s3.py && sleep 0'
-<localhost> EXEC /bin/sh -c '~/.pyenv/versions/ansible/bin/python $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221/AnsiballZ_aws_s3.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r $USER/.ansible/tmp/ansible-tmp-1595726799.2544389-64365-270755215531221/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT $USER/.ansible/tmp/ansible-local-75310ugnkufdv/tmpk3__qehd TO $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618/AnsiballZ_aws_s3.py
+<localhost> EXEC /bin/sh -c 'chmod u+x $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618/ $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618/AnsiballZ_aws_s3.py && sleep 0'
+<localhost> EXEC /bin/sh -c '~/.pyenv/versions/ansible/bin/python $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618/AnsiballZ_aws_s3.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r $USER/.ansible/tmp/ansible-tmp-1595759961.57452-75355-68774172649618/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true,
     "invocation": {
@@ -137,6 +136,18 @@ META: ran handlers
 PLAY RECAP *************************************************************************************************************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+
+While passing in the interpreter works in this case if there were 2 plays one local and one remote in a playbook the remote would fail. Local plays run aws. Remote plays use ssh, since remoted know nothing of ~/virtualenv... the remote would fail. For a better solution read this very good explanation:
+<https://maciej.lasyk.info/2016/Jun/27/working-with-virtualenv-and-ansible/>
+
+On a side note ec2.py inventory has been updated with a plugin read here for more info
+<https://aaronoellis.com/articles/replacing-ansibles-aws-ec2py-script-with-the-aws-ec2-plugin>
+
+OR I think you can still use the script according to official documentation
+<https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#inventory-script-example-aws-ec2>
+
+Above document contains this link
+<https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py>
 
 To enable argcomplete for ansible
 
