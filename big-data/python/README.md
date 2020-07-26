@@ -116,6 +116,8 @@ git remote add origin git@github.com:longshot2k20/python_template.git
 git push -u origin master
 ```console
 
+in vscode cmd-shift-p 'python interpreter' -> python-template
+
 ```console
 pip install -r requirements_dev.txt
 make test

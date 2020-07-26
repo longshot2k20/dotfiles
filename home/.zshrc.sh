@@ -385,7 +385,17 @@ jdk() {
   version=$1
   export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
   java -version
- }
+}
+
+# enable argcomplete for ansible
+ansible_complete() {
+  # To activate completions for zsh you need to have bashcompinit enabled in zsh:
+  autoload -U bashcompinit
+  bashcompinit
+  
+  #enable completion for your scripts with register-python-argcomplete:
+  eval "$(register-python-argcomplete my-awesome-script)"
+}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
