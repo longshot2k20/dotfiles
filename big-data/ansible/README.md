@@ -149,7 +149,7 @@ OR I think you can still use the script according to official documentation
 Above document contains this link
 <https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py>
 
-To enable argcomplete for ansible
+To enable argcomplete for ansible. Then type ansible and hit tab.
 
 ```console
 ansible_complete
