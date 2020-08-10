@@ -4,3 +4,7 @@
 [submodule "terminal/highlight"]
 	path = terminal/highlight
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "big-data/pandas/Pandas-Cookbook-Second-Edition"]
+	path = big-data/pandas/Pandas-Cookbook-Second-Edition
+	url = git@github.com:longshot2k20/Pandas-Cookbook-Second-Edition.git
+	branch = master
