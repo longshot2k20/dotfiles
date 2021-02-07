@@ -95,6 +95,22 @@ pyenv which python
 pyenv which pip
 ```
 
+## Create new conda environment add pip package
+
+(assumes pyenv installed correctly and pip is associated with active conda env)
+conda create --name flair-test
+conda activate flair-test
+pip install --upgrade pip
+pip list
+pip install flair
+pip list
+
+(make available to jupyter notebook)
+pip install --user ipykernel
+(ignore above warnings about path)
+python -m ipykernel install --user --name=flair-test
+(refresh jupyter browser should be available)
+
 ## Create a project with cookiercutter
 
 Create python_tempate as new github repo in browser

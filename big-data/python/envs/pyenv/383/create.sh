@@ -16,3 +16,6 @@ pip install -r requirements.txt
 # Dectivate
 pyenv deactivate
 
+## create/activate new env for shopping
+pyenv virtualenv 3.8.3 shopping
+pyenv activate shopping
