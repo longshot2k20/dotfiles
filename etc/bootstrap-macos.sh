@@ -122,6 +122,9 @@ if [[ `uname` == 'Darwin' ]]; then
   # tmux
   brew install tmux
 
+  # terraform
+  brew install terraform
+
   # iterm2
   brew cask install iterm2
 
