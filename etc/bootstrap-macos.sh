@@ -125,6 +125,9 @@ if [[ `uname` == 'Darwin' ]]; then
   # terraform
   brew install terraform
 
+  # packer
+  brew install packer
+
   # iterm2
   brew cask install iterm2
 
