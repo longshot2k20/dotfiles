@@ -6,6 +6,13 @@
 - Data directory: \$HOME/Library/DataScienceStudio/dss_home
 - TCP base port: 11200
 
+## Starting service
+
+```bash
+cd /Users/apanizo/Library/DataScienceStudio/dss_home/bin
+./dss start
+```
+
 ## Installing
 
 Goto dataiku
@@ -29,7 +36,7 @@ wget https://cdn.downloads.dataiku.com/public/dss/8.0.0/dataiku-dss-8.0.0.tar.gz
 brew cask install data-science-studio
 ```
 
-Does not seem to work
+Does not seem to work. This is for installing now that it is installed into your home directory. Go there and start the server.
 
 ```console
 “DataScienceStudio.app” can’t be opened because Apple cannot check it for malicious software.
